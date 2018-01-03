@@ -1,0 +1,30 @@
+<div class="row" *ngIf="item">
+    <div class="col-md-12">
+        <img [src]="item.imagePath" alt="{{item.name}}" style="max-height: 256px;" class=" img-responsive">
+    </div>
+    <div class="col-xs-12">
+        <h1>{{item.name}}</h1>
+
+    </div>
+    <div class="col-xs-12">
+        <div class="btn-group">
+            <button type="button" class="btn btn-primary dropdown-toggle">
+      Manage Recipe <span class="caret" ></span></button>
+            <ul class="dropdown-menu">
+                <li><a href="#">To Shopping List </a></li>
+                <li><a href="#">Edit </a></li>
+                <li><a href="#">Delete </a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="row" *ngIf="item">
+    <div class="col-xs-12">
+        {{item.description}}
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        Ingrdients
+    </div>
+</div>
