@@ -1,3 +1,4 @@
+import { ShoppingListService } from './shopping-list/shopping-list.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -12,6 +13,9 @@ import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
 import {RecipesItemComponent } from './recipes/recipes-list/recipes-item/recipes-item.component';
 import { FormsModule } from '@angular/forms';
+import { DropdownDirective } from './shared/dropdown.directive';
+import { RecipesEditComponent } from './recipes/recipes-edit/recipes-edit.component';
+import { RecipesStartComponent } from './recipes/recipes-start/recipes-start.component';
 
 
 @NgModule({
@@ -23,14 +27,17 @@ import { FormsModule } from '@angular/forms';
     RecipesItemComponent,
     RecipesDetailComponent,
     ShoppingListComponent,
-    ShoppingEditComponent
+    ShoppingEditComponent,
+    DropdownDirective,
+    RecipesEditComponent,
+    RecipesStartComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [ShoppingListService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
