@@ -102,6 +102,10 @@ export class RecipesEditComponent implements OnInit {
     (<FormArray>this.recipeForm.get('ingredients')).removeAt(i);
   }
 
+  get formdata() {
+      return (<FormArray>this.recipeForm.get('ingredients'));
+  }
+
   addIng() {
     (<FormArray>this.recipeForm.get('ingredients')).push(
       new FormGroup({
