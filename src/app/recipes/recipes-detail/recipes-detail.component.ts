@@ -29,7 +29,7 @@ export class RecipesDetailComponent implements OnInit {
 
   onEditRecipe() {
 
-    this.router.navigate(['edit'], {relativeTo: this.route});
+    this.router.navigate(['edit'], { relativeTo: this.route });
 
   }
 
@@ -37,6 +37,11 @@ export class RecipesDetailComponent implements OnInit {
 
     this.recipeService.addIngrdeintsToShopList(this.item.ingredients);
 
+  }
+
+  onDelete() {
+    this.recipeService.delete(this.id);
+    this.router.navigate(['../'], { relativeTo: this.route });
   }
 
 }

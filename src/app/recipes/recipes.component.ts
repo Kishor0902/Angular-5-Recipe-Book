@@ -5,27 +5,28 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-recipes',
   templateUrl: './recipes.component.html',
-  styleUrls: ['./recipes.component.css'],
-  providers: [RecipeService]
+  styleUrls: ['./recipes.component.css']
 })
 export class RecipesComponent implements OnInit {
 
 
-  onFocusRecipe: Recipe;
+  // onFocusRecipe: Recipe;
 
-  constructor(private recipeService: RecipeService) { }
+  constructor() { }
 
   ngOnInit() {
-    this.recipeService.recipeSelected.subscribe(
-      (recipe: Recipe) => {
-      this.onFocusRecipe = recipe;
-      }
-    );
-  }
+    /*  this.recipeService.recipeSelected.subscribe(
+       (recipe: Recipe) => {
+       this.onFocusRecipe = recipe;
+       }
+     ); */
 
-  selectedRecipe(rec: Recipe) {
-    // console.log(rec);
-    this.onFocusRecipe = rec;
+
   }
+  /*
+    selectedRecipe(rec: Recipe) {
+      // console.log(rec);
+      this.onFocusRecipe = rec;
+    } */
 
 }
