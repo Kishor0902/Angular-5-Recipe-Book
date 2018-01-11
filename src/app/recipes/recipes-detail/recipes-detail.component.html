@@ -24,8 +24,8 @@
     </div>
 </div>
 <div class="row">
-    <div class="col-xs-12">
-        <ul class="list-group" *ngIf=" item.ingredients">
+    <div class="col-xs-12" *ngIf="breakerIng">
+        <ul class="list-group">
             <li class="list-group-item" *ngFor="let oneing of item.ingredients">
                 {{oneing.name}}-{{oneing.amount}}
             </li>

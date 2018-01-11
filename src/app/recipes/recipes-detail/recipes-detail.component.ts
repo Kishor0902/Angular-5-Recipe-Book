@@ -14,6 +14,7 @@ export class RecipesDetailComponent implements OnInit {
 
   item: Recipe;
   id: number;
+  breakerIng = false;
 
   constructor(private recipeService: RecipeService, private route: ActivatedRoute, private router: Router) { }
 
@@ -23,6 +24,7 @@ export class RecipesDetailComponent implements OnInit {
 
         this.id = +params['id'];
         this.item = this.recipeService.getRecipe(this.id);
+         console.log(this.item);
       }
     );
   }

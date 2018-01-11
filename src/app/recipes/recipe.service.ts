@@ -6,6 +6,7 @@ import { Injectable, EventEmitter } from '@angular/core';
 
 @Injectable()
 export class RecipeService {
+  // https://udemy-recipe-91ccd.firebaseio.com/
   private recipes: Recipe[] = [
     new Recipe('Ribs', 'Pork ripps 500g'
       , 'https://upload.wikimedia.org/wikipedia/commons/9/94/Nugget_rib_cook-off_001.JPG',
@@ -22,6 +23,12 @@ export class RecipeService {
   recipesChanged = new Subject<Recipe[]>();
 
   constructor(private shoppingListService: ShoppingListService) { }
+
+  setRecipes(reps: Recipe[]) {
+
+    this.recipes = reps;
+    this.recipesChanged.next(this.recipes.slice());
+  }
 
   getRecipes() {
     return this.recipes.slice();
