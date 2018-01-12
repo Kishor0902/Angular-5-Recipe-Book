@@ -1,3 +1,4 @@
+import { AuthService } from './../auth/auth.service';
 import { Component, OnInit, EventEmitter } from '@angular/core';
 import { Output } from '@angular/core/';
 import { DataStoreService } from '../shared/data-store.service';
@@ -10,7 +11,7 @@ import { Response } from '@angular/http';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private dataStore: DataStoreService) { }
+  constructor(private auth: AuthService, private dataStore: DataStoreService) { }
 
   ngOnInit() {
   }

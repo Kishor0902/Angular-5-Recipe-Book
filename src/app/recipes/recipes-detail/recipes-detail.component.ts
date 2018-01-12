@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { Input } from '@angular/core/';
 import { Recipe } from '../recipe.model';
 import { ActivatedRoute, Params, Router } from '@angular/router/';
+import { AuthService } from '../../auth/auth.service';
 
 @Component({
   selector: 'app-recipes-detail',
@@ -16,7 +17,7 @@ export class RecipesDetailComponent implements OnInit {
   id: number;
   breakerIng = false;
 
-  constructor(private recipeService: RecipeService, private route: ActivatedRoute, private router: Router) { }
+  constructor(private auths: AuthService, private recipeService: RecipeService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
     this.route.params.subscribe(
@@ -24,7 +25,7 @@ export class RecipesDetailComponent implements OnInit {
 
         this.id = +params['id'];
         this.item = this.recipeService.getRecipe(this.id);
-         console.log(this.item);
+        console.log(this.item);
       }
     );
   }
