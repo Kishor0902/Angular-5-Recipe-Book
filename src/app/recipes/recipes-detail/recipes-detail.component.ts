@@ -30,6 +30,10 @@ export class RecipesDetailComponent implements OnInit {
     );
   }
 
+  isAut() {
+      return this.auths.isAuthenticated();
+  }
+
   onEditRecipe() {
 
     this.router.navigate(['edit'], { relativeTo: this.route });
